@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "csv-parser": "^3.0.0",
+    "fetch-retry": "^5.0.4",
     "fuzzysort": "^2.0.4",
     "google-spreadsheet": "^3.3.0",
     "node-fetch": "^3.3.1",
