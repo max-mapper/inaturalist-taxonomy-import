@@ -37,6 +37,11 @@ var run = async () => {
   console.log("Selected document", doc.title);
   for (var i in doc.sheetsByIndex) {
     const sheet = doc.sheetsByIndex[i];
+
+    await sheet.loadCells("A1:A2");
+    var firstCell = sheet.getCell(0, 0);
+    if (firstCell.value !== "iNatTaxon") continue; // skip this sheet
+
     console.log("Updating sheet:", sheet.title);
     // first pass: local taxon lookups
     await sheet.loadCells("A2:C" + sheet.rowCount);
